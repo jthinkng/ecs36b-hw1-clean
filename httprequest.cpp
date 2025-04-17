@@ -16,12 +16,6 @@ static std::string to_lower(const std::string& input) {
     return out;
 }
 
-static std::string ltrim(const std::string& s) {
-    size_t start = 0;
-    while (start < s.size() && std::isspace(s[start])) ++start;
-    return s.substr(start);
-}
-
 HTTPRequest::HTTPRequest(const std::string &request) {
     if (request.empty()) {
         throw MalformedRequestException("Empty request");
